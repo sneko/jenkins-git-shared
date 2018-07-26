@@ -30,9 +30,6 @@ def call(Closure body) {
     def credentialsId = remoteConfig.credentialsId
     assert credentialsId : 'No credentials found in SCM configuration'
 
-    echo "Using GIT_ASKPASS to set credentials '${credentialsId}' for repository '${remoteConfig.url}'"
-
-
     // Create the GIT_ASKPASS script
     //
     def tempDir = mktemp('withGit')
@@ -40,7 +37,7 @@ def call(Closure body) {
         def filename = null
 
         withCredentials([usernamePassword(credentialsId: credentialsId, usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASSWORD')]) {
-            if (utils.isUnixLike()) {
+            if (isUnix()) {
                 filename = createGitAskPassUnix(tempDir)
             }
             else {

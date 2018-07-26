@@ -1,0 +1,5 @@
+<strong>rmdir(dir='path/to/dir')</strong>
+
+<p>
+    Recursively delete the directory specified by the 'dir' argument.
+</p>
