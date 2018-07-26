@@ -1,0 +1,5 @@
+<strong>withGit()</strong>
+
+<p>
+    Propagate Git credentials to git commands executed from pipeline scripts.
+</p>
