@@ -1,0 +1,6 @@
+<strong>sendNotifications(prefix='build')</strong>
+
+<p>
+    Create a temporary directory in the temp area reserved for this build.
+    Return the absolute path of the created temp directory.
+</p>
